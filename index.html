@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anna Mai</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script defer src="https://kit.fontawesome.com/a2e53fe7af.js"></script>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script defer src="./bundle.js"></script>
+  </head>
+  <body>
+    <!-- Sidebar/menu-->
+    <nav id="sidebar">
+      <h1 class="sidebar-padding text-center">
+        <b><span class="smaller-h1">I AM</span><br />ANNA MAI</b>
+      </h3>
+      <img src="https://res.cloudinary.com/dejczgo0o/image/upload/bo_8px_solid_rgb:ffffff,c_fill,e_art:aurora,g_xy_center,h_400,r_max,w_400,y_1966/v1562815318/personal-page/me/anna-linkedin.png" alt="" style="width:80%;"/>
+      <div class="menu center-column">
+        <div><a href="#projects">PROJECTS</a></div>
+        <div><a href="#about-me">ABOUT ME</a></div>
+        <div><a href="#travel">TRAVEL</a></div>
+        <div><a href="#contact">CONTACT</a></div>
+      </div>
+    </nav>
+    <div id="main">
+      <div id="projects">
+        <h2>Projects</h2>
+        <div class="section-container">
+          <div class="project" id="city-flocks">
+            <div class="project-card">
+              <img
+                src="https://res.cloudinary.com/dejczgo0o/image/upload/c_pad,h_400,w_400/v1562855413/personal-page/projects/cityflockslogo_iaztgv.jpg"
+                alt="city-flocks"
+                class="image"/>
+              <div class="overlay">
+                <div class="overlay-content">
+                  <h2>City Flocks</h2>
+                  <div class="stack">
+
+                  </div>
+                  <p>Mobile scavenger hunt game that uses native geofencing to identify locations of interests and a combination of sockets and a server cache to communicate game updates between members of a team.</p>
+                  <div class="links">
+                    <a target="_blank" href="https://github.com/almond-lima/city-flocks-client" >
+                      <i class="fab fa-github"></i>
+                      <span class="tooltiptext">Github (Client)</span>
+                    </a>
+                    <a target="_blank" href="https://github.com/almond-lima/city-flocks-server" >
+                      <i class="fab fa-github"></i>
+                      <span class="tooltiptext">Github (Server)</span>
+                    </a>
+                    <a target="_blank" href="https://youtu.be/1TzF2wb3n8o">
+                      <i class="fab fa-youtube"></i>
+                      <span class="tooltiptext">YouTube Demo</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project" id="ers">
+            <div class="project-card">
+              <img
+                src="https://res.cloudinary.com/dejczgo0o/image/upload/c_fill,h_400,w_400/v1562855149/personal-page/projects/Screen_Shot_2019-07-11_at_10.14.57_AM_ru9dwu.png"
+                alt="ers"
+                class="image"/>
+              <div class="overlay">
+                <div class="overlay-content">
+                  <div class="stack">
+
+                  </div>
+                  <h2>Egyptian Ratscrew</h2>
+                  <p>Multiplayer, real-time, reaction- and memory-based game in which a player's goal is to win all the cards in the deck.</p>
+                  <div class="links">
+                    <a target="_blank" href="https://github.com/iamannamai/stackathon-ers">
+                      <i class="fab fa-github"></i>
+                      <span class="tooltiptext">Github</span>
+                    </a>
+                    <a target="_blank" href="https://stackathon-ers.firebaseapp.com/">
+                      <i class="fas fa-globe-americas"></i>
+                      <span class="tooltiptext">Deployed Site</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project" id="grunge-cart">
+              <div class="project-card">
+                <img
+                  src="https://res.cloudinary.com/dejczgo0o/image/upload/c_fill,h_400,w_400/v1562804414/personal-page/projects/grunge-cart-landing.png"
+                  alt="grunge-cart"
+                  class="image"/>
+                <div class="overlay">
+                  <div class="overlay-content">
+                    <h2>Grunge Cart</h2>
+                    <div class="stack">
+
+                    </div>
+                    <p>E-Commerce website specializing in 90s grunge rock records. Fully functioning cart implementation and Stripe integration for payment processing.</p>
+                    <div class="links">
+                      <a target="_blank" href="https://github.com/white-toucan/grace-shopper">
+                        <i class="fab fa-github"></i>
+                        <span class="tooltiptext">Github</span>
+                      </a>
+                      <a target="_blank" href="https://grunge-cart.herokuapp.com/">
+                        <i class="fas fa-globe-americas"></i>
+                        <span class="tooltiptext">Deployed Site</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="about-me">
+        <h2>About Me</h2>
+        <div class="section-container">
+          <div>
+            <p></p>
+            <p></p>
+          </div>
+          <div class="timeline">
+            <div class="container left">
+              <div class="content">
+                <h2>2017</h2>
+                <p>Lorem ipsum..</p>
+              </div>
+            </div>
+            <div class="container right">
+              <div class="content">
+                <h2>2016</h2>
+                <p>Lorem ipsum..</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="travel">
+        <h2>My Travels</h2>
+        <div class="section-container">
+          <div id="map"></div>
+          <div id="destination-details"></div>
+        </div>
+      </div>
+      <div id="contact">
+        <h2>Contact Me</h2>
+        <div class="section-container">
+          <a href="mailto: annam0403@gmail.com"
+            ><i class="fas fa-envelope-square"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/iam-anna-mai"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://github.com/iamannamai"
+            ><i class="fab fa-github-square"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
