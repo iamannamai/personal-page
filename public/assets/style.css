@@ -340,12 +340,12 @@ header {
   color: #008374;
 }
 
-.overlay-content .links a {
+.tooltip {
   position: relative;
   display: inline-block;
 }
 
-.overlay-content .links a .tooltiptext {
+.tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;
   background-color: #555;
@@ -362,7 +362,7 @@ header {
   transition: opacity 0.3s;
 }
 
-.overlay-content .links a .tooltiptext::after {
+.tooltip .tooltiptext::after {
   content: '';
   position: absolute;
   bottom: 100%;
@@ -373,7 +373,7 @@ header {
   border-color: transparent transparent #555 transparent;
 }
 
-.overlay-content .links a:hover .tooltiptext {
+.tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
 }
