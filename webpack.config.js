@@ -1,11 +1,34 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   // the starting point for our program
-  entry: './src/index.js',
+  entry: ['./src/index.js', './scss/main.scss'],
 
   // affects several default webpack settings
   mode: 'development',
+
+  module: {
+    rules: [
+      {
+        test: /\.(scss|sass)$/,
+        use: [
+          'style-loader', // creates style nodes from JS strings
+          'css-loader', // translates CSS into CommonJS
+          'sass-loader' // compiles Sass to CSS, using Node Sass by default
+        ]
+      }
+    ]
+  },
+
+  plugins: [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: '[name].css',
+      chunkFilename: '[id].css'
+    })
+  ],
 
   output: {
     // The absolute path for the directory where we want the output to be placed.
