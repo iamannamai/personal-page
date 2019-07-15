@@ -1,3 +1,16 @@
+:root {
+  --icon-size: 1.6rem;
+  --main-font-color: #757575;
+  --sidebar-background: #e9e9e9;
+  --accent-dark: #99d3df;
+  --accent-light: #88bbd6;
+  --email: #db4437;
+  --github: #6e5494;
+  --linkedin: #0077b5;
+  --youtube: #ff0000;
+  --webglobe: #008374;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -14,13 +27,13 @@ h5 {
 body {
   margin: 0;
   display: flex !important;
-  color: #757575;
+  color: var(--main-font-color);
 }
 
 a,
 a:visited {
   font-weight: lighter;
-  color: #757575;
+  color: var(--main-font-color);
   text-decoration: none;
   display: block;
   padding: 0.5rem;
@@ -35,8 +48,6 @@ header {
 .center {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  align-items: center;
 }
 
 .center-column {
@@ -71,20 +82,21 @@ header {
 
 .menu div:hover {
   color: #000000;
-  background-color: #88bbd6;
+  background-color: var(--accent-light);
 }
 
 .menu a.active {
-  background-color: #99d3df;
+  background-color: var(--accent-dark);
   font-weight: bold;
 }
 
 #sidebar {
   font-weight: bold;
   height: 100vh;
-  background-color: #e9e9e9;
+  background-color: var(--sidebar-background);
   z-index: 1;
   overflow: auto;
+  box-shadow: 2px 0px 3px #999999;
   /* Fix ratio of sidebar to main section */
   display: flex;
   flex-direction: column;
@@ -105,7 +117,6 @@ header {
 }
 
 #main {
-  padding: 1rem;
   scroll-behavior: smooth;
   background-color: #cdcdcd;
   height: 100vh;
@@ -114,161 +125,26 @@ header {
   flex: 4;
 }
 
-/* #main > div {
-  height: 500px;
-} */
-
-#travel .section-container {
-  flex-direction: column;
+#main h1 {
+  font-size: 1.8rem;
 }
 
-#map {
-  height: 70vh;
-  overflow: hidden;
-  display: block;
+#main > div {
+  padding: 1rem;
+  text-align: center;
 }
 
-#destination-details {
-  display: none;
-}
-/************************/
-
-/***** TIMELINE *****/
-
-/* The actual timeline (the vertical ruler) */
-.timeline {
-  display: none;
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* The actual timeline (the vertical ruler) */
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 6px;
+#main > div:nth-child(even) {
   background-color: white;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -3px;
 }
+/**************************/
 
-/* Container around content */
-.container {
-  padding: 10px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 50%;
-}
-
-/* The circles on the timeline */
-.container::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -17px;
-  background-color: white;
-  border: 4px solid #ff9f55;
-  top: 15px;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-/* Place the container to the left */
-.left {
-  left: 0;
-}
-
-/* Place the container to the right */
-.right {
-  left: 50%;
-}
-
-/* Add arrows to the left container (pointing right) */
-.left::before {
-  content: ' ';
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  right: 30px;
-  border: medium solid white;
-  border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent white;
-}
-
-/* Add arrows to the right container (pointing left) */
-.right::before {
-  content: ' ';
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  left: 30px;
-  border: medium solid white;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
-}
-
-/* Fix the circle for containers on the right side */
-.right::after {
-  left: -16px;
-}
-
-/* The actual content */
-.content {
-  padding: 20px 30px;
-  background-color: white;
-  position: relative;
-  border-radius: 6px;
-}
-
-/* Media queries - Responsive timeline on screens less than 600px wide */
-@media screen and (max-width: 600px) {
-  /* Place the timelime to the left */
-  .timeline::after {
-    left: 31px;
-  }
-
-  /* Full-width containers */
-  .container {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-  }
-
-  /* Make sure that all arrows are pointing leftwards */
-  .container::before {
-    left: 60px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-  }
-
-  /* Make sure all circles are at the same spot */
-  .left::after,
-  .right::after {
-    left: 15px;
-  }
-
-  /* Make all right containers behave like the left ones */
-  .right {
-    left: 0%;
-  }
-}
-
-/***** OVERLAY EFFECT *****/
-
+/***** PROJECTS *****/
 #projects .section-container {
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
-    minmax(300px, 1fr)
+    minmax(350px, 1fr)
   ); /* Where the magic happens. Cards below 265px wrap to another row. Cards above 265px stretch to take remaining width. Autofit makes it so that cards in new row line up with cards above them*/
   grid-template-rows: auto;
   grid-gap: 10px;
@@ -286,12 +162,37 @@ header {
   height: auto;
 }
 
+.fab.fa-github {
+  color: var(--github);
+}
+
+.fab.fa-youtube {
+  color: var(--youtube);
+}
+
+.fas.fa-globe-americas {
+  color: var(--webglobe);
+}
+
+.overlay-content i {
+  font-size: var(--icon-size);
+}
+
+.overlay-content p {
+  font-size: 1rem;
+}
+
+.overlay-content .contributors {
+  color: var(--main-font-color);
+}
+
+/***** OVERLAY EFFECT *****/
 .overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(136, 187, 214, 0.95);
+  background-color: rgba(136, 187, 214, 0.98);
   overflow: hidden;
   width: 100%;
   height: 0;
@@ -300,10 +201,10 @@ header {
 
 .project-card:hover .overlay {
   height: 100%;
+  overflow: scroll;
 }
 
 .overlay-content {
-  /* display: flex; */
   width: 90%;
   color: white;
   position: absolute;
@@ -315,34 +216,15 @@ header {
   text-align: center;
 }
 
-.overlay-content div {
-  display: flex;
-  justify-content: center;
-}
-
-.overlay-content i {
-  font-size: 2rem;
-}
-
-.overlay-content p {
-  font-size: 1rem;
-}
-
-.fab.fa-github {
-  color: #6e5494;
-}
-
-.fab.fa-youtube {
-  color: #ff0000;
-}
-
-.fas.fa-globe-americas {
-  color: #008374;
-}
-
+/***** TOOLTIP *****/
 .tooltip {
   position: relative;
   display: inline-block;
+}
+
+.tooltip img {
+  height: var(--icon-size);
+  margin: 0.2rem;
 }
 
 .tooltip .tooltiptext {
@@ -376,4 +258,205 @@ header {
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+/***** COLLAPSIBLE *****/
+.hide {
+  display: none;
+}
+
+.collapsible {
+  cursor: pointer;
+  font-size: var(--icon-size);
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.collapsible.active,
+.collapsible:hover {
+  color: var(--main-font-color);
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.collapsible-content {
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  overflow-x: scroll;
+  transition: max-height 0.2s ease-out;
+}
+/************************/
+
+/***** ABOUT ME *****/
+#about-me h4.subtitle {
+  font-style: oblique;
+}
+
+/************************/
+
+/***** TIMELINE *****/
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* display: flex; */
+  display: grid;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: var(--accent-dark);
+  top: -110%;
+  left: 50%;
+  height: 80vw;
+  transform: rotate(90deg);
+  bottom: calc(80vw / 3 * -1);
+  top: calc(80vw / 3 * -1);
+}
+
+/* Container around content */
+.timeline-container {
+  /* display: none; */
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  display: inline-block;
+  /* height: 100%; */
+}
+
+/* The circles on the timeline */
+.timeline-container span {
+  content: '';
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: #ffffff;
+  border: 0.3rem solid #ff9f55;
+  border-radius: 50%;
+  z-index: 1;
+  left: calc(50% - 10.5px);
+}
+
+/* Place the container to the left */
+.timeline-container.bottom::after {
+  /* top: -35px; */
+}
+
+/* Place the container to the right */
+.timeline-container.top::after {
+  /* bottom: -35px; */
+}
+
+/* Add arrows to the bottom container (pointing up) */
+.timeline-container.bottom::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: calc(50% - 7.5px);
+  z-index: 1;
+  border: medium solid var(--sidebar-background);
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent var(--sidebar-background) transparent;
+}
+
+/* Add arrows to the top container (pointing down) */
+.timeline-container.top::before {
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 7.5px);
+  z-index: 1;
+  border: medium solid var(--sidebar-background);
+  border-width: 10px 10px 0 10px;
+  border-color: var(--sidebar-background) transparent transparent transparent;
+}
+
+/* The actual content */
+.event-content {
+  display: none;
+  padding: 20px 30px;
+  background-color: var(--sidebar-background);
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .timeline-container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .timeline-container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
+    left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+/**********************/
+
+/***** TRAVEL *****/
+#travel .section-container {
+  flex-direction: column;
+}
+
+#map {
+  height: 70vh;
+  overflow: hidden;
+  display: block;
+}
+
+#destination-details {
+  display: none;
+}
+/*******************/
+
+/***** CONTACT ME *****/
+#contact .section-container {
+  font-size: 1.2rem;
+  min-width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#contact i {
+  font-size: 2rem;
+}
+
+.fas.fa-envelope-square:hover {
+  color: var(--email);
+}
+
+.fab.fa-github-square:hover {
+  color: var(--github);
+}
+
+.fab.fa-linkedin:hover {
+  color: var(--linkedin);
 }
