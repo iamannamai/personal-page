@@ -2,25 +2,25 @@
 
 ## PROJECTS
 
-[ ] Fill out project details
+[x] Fill out project details
 
 - Description
 - Contributors
 - Stack used
 - Other media
 
-[ ] Show project details section on card click
-[ ] Grab screenshots and upload to cloudinary
+[x] Show project details section on card click
+[x] Grab screenshots and upload to cloudinary
 
 ## ABOUT ME
 
-[ ] Find photo to use
+[x] Find photo to use
 
 - 1 icon sized
 - 1 larger
 
-[ ] Provide short blurb of history and interests
-[ ] Work history section
+[x] Provide short blurb of history and interests
+[x] Work history section
 
 - Timeline bar (flex?)
 - Modal to pop up details?
@@ -30,8 +30,8 @@
 [ ] Gather trip details
 [ ] Upload some photos
 [ ] Map out json to mapbox layer
-[ ] Clicking on
+[ ] Clicking on pin pops up modal with pictures
 
 ## CONTACT
 
-[ ] Format icons
+[x] Format icons

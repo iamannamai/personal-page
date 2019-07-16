@@ -23,6 +23,7 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
+    "@mapbox/mapbox-gl-geocoder": "^4.4.1",
     "mapbox-gl": "^1.1.0"
   }
 }

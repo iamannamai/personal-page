@@ -45,12 +45,6 @@ a:visited {
   padding: 0.5rem;
 }
 
-/*
-header {
-  position: absolute;
-  z-index: 1;
-} */
-
 .center {
   display: flex;
   justify-content: center;
@@ -68,32 +62,22 @@ header {
 }
 
 /***** SIDEBAR *****/
-.sidebar-padding {
-  padding-top: 4rem;
-}
-
-.smaller-h1 {
-  font-weight: lighter;
-  font-size: 1rem;
-}
-
-.menu {
+header {
+  display: none;
+  position: absolute;
   width: 100%;
-}
+  z-index: 3;
+  padding: 0 1rem;
+  background-color: var(--sidebar-background);
+  box-shadow: 2px 0px 3px #999999;
 
-.menu div {
-  width: 100%;
-  text-align: center;
-}
+  nav {
+    // height: 100px;
+  }
 
-.menu div:hover {
-  color: #000000;
-  background-color: var(--accent-light);
-}
-
-.menu a.active {
-  background-color: var(--accent-dark);
-  font-weight: bold;
+  @media (max-width: 768px) {
+    display: block;
+  }
 }
 
 #sidebar {
@@ -109,10 +93,42 @@ header {
   flex: 1;
   align-items: center;
   min-width: 200px;
-}
 
-#sidebar img {
-  padding: 2rem 0;
+  img {
+    padding: 2rem 0;
+  }
+
+  .sidebar-padding {
+    padding-top: 4rem;
+  }
+
+  .smaller-h1 {
+    font-weight: lighter;
+    font-size: 1rem;
+  }
+
+  .menu {
+    width: 100%;
+  }
+
+  .menu div {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu div:hover {
+    color: #000000;
+    background-color: var(--accent-light);
+  }
+
+  .menu a.active {
+    background-color: var(--accent-dark);
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 /*******************/
 
@@ -296,24 +312,38 @@ header {
 #about-me {
   .section-container {
     flex-direction: column;
-
+    justify-content: center;
     .blurb {
       p {
-        font-size: 1.2rem;
-        padding: 0.2rem;
-        line-height: 1.5rem;
+        text-indent: 2em;
+        font-size: 1.1em;
+        padding: 0.2em;
+        line-height: 1.5em;
         text-align: left;
+        padding: 0 3em;
+        a {
+          display: inline;
+          color: var(--accent-dark);
+        }
+        span {
+          font-weight: bold;
+        }
       }
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1000px) {
       flex-direction: row;
+      justify-content: center;
+
       .blurb {
         flex: 1;
+        p {
+          line-height: 1.8rem;
+        }
       }
 
       .timeline {
-        flex: 2;
+        flex: 1;
       }
     }
   }
@@ -334,12 +364,17 @@ header {
 ==================================*/
 /*-- GENERAL STYLES
     ------------------------------*/
+div.timeline {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
 .timeline {
   line-height: 1.2em;
   list-style: none;
   margin: 0;
   padding: 0;
-  width: 100%;
   h1,
   h2,
   h3,
@@ -347,6 +382,18 @@ header {
   h5,
   h6 {
     line-height: inherit;
+  }
+
+  span {
+    font-size: 0.7rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  h4 {
+    font-size: 0.8rem;
   }
 }
 
@@ -363,12 +410,12 @@ header {
 /*----- TIMELINE INFO -----*/
 
 .timeline-info {
-  font-size: 12px;
   font-weight: 700;
   letter-spacing: 3px;
   margin: 0 0 0.5em 0;
   text-transform: uppercase;
   white-space: nowrap;
+  color: var(--accent-light);
 }
 /*----- TIMELINE MARKER -----*/
 
@@ -386,7 +433,7 @@ header {
     display: block;
     height: 15px;
     position: absolute;
-    top: 4px;
+    top: 0px;
     left: 0;
     width: 15px;
     transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
@@ -397,9 +444,9 @@ header {
     background: #ccd5db;
     display: block;
     position: absolute;
-    top: 24px;
-    bottom: 0;
-    left: 6px;
+    top: 21px;
+    bottom: -5px;
+    left: 9px;
   }
   .timeline-item:last-child &:after {
     content: none;
@@ -413,7 +460,13 @@ header {
 /*----- TIMELINE CONTENT -----*/
 
 .timeline-content {
-  padding-bottom: 40px;
+  h3 {
+    margin-top: 0;
+    font-weight: bold;
+  }
+  h4 {
+    color: #aaaaaa;
+  }
   p:last-child {
     margin-bottom: 0;
   }
@@ -459,35 +512,35 @@ header {
   ----------------------------------------------*/
 
 .timeline-split {
-  @media (min-width: 768px) {
-    .timeline {
-      display: table;
-    }
-    .timeline-item {
-      display: table-row;
-      padding: 0;
-    }
-    .timeline-info,
-    .timeline-marker,
-    .timeline-content,
-    .period .timeline-info {
-      display: table-cell;
-      vertical-align: top;
-    }
-    .timeline-marker {
-      position: relative;
-    }
-    .timeline-content {
-      padding-left: 30px;
-    }
-    .timeline-info {
-      padding-right: 30px;
-    }
-    .period .timeline-title {
-      position: relative;
-      left: -45px;
-    }
+  // @media (min-width: 768px) {
+  .timeline {
+    display: table;
   }
+  .timeline-item {
+    display: table-row;
+    padding: 0;
+  }
+  .timeline-info,
+  .timeline-marker,
+  .timeline-content,
+  .period .timeline-info {
+    display: table-cell;
+    vertical-align: top;
+  }
+  .timeline-marker {
+    position: relative;
+  }
+  .timeline-content {
+    padding-left: 30px;
+  }
+  .timeline-info {
+    padding-right: 30px;
+  }
+  .period .timeline-title {
+    position: relative;
+    left: -45px;
+  }
+  // }
 }
 
 /*----------------------------------------------
@@ -497,6 +550,7 @@ header {
 .timeline-centered {
   @extend .timeline-split;
   @media (min-width: 992px) {
+    width: auto;
     &,
     .timeline-item,
     .timeline-info,
@@ -507,7 +561,7 @@ header {
       padding: 0;
     }
     .timeline-item {
-      padding-bottom: 40px;
+      padding-bottom: 20px;
       overflow: hidden;
     }
     .timeline-marker {
