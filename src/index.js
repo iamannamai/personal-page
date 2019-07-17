@@ -38,15 +38,3 @@ for (let i = 0; i < coll.length; i++) {
     }
   });
 }
-
-const timeline = document.getElementsByClassName('timeline')[0];
-const timelines = document.getElementsByClassName('timeline-container');
-
-timeline.style.setProperty(
-  'grid-template-columns',
-  `repeat(${timelines.length}, 1fr)`
-);
-
-for (let i = 0; i < timelines.length; i++) {
-  timelines[i].style.setProperty('grid-column', i + 1);
-}

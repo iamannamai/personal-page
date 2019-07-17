@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-watch": "webpack -w",
-    "build": "webpack",
+    "build": "webpack && node-sass scss/main.scss public/assets/style.css",
     "start": "webpack-dev-server -w"
   },
   "keywords": [],

@@ -17,7 +17,7 @@ map.addControl(nav, 'top-right');
 map.addControl(
   new MapboxGeocoder({
     accessToken: MAPBOX_ACCESS_TOKEN,
-    mapboxgl: map
+    mapboxgl: mapboxgl
   })
 );
 map.scrollZoom.disable();
