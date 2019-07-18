@@ -18,22 +18,22 @@ map.on('load', function() {
   //On map load, we want to do some stuff
   map.addLayer({
     //here we are adding a layer containing the tileset we just uploaded
-    id: 'annamai.bo1h1cab',
+    id: 'countries-visited',
     source: {
       type: 'vector',
-      url: MAPBOX_STYLE
+      url: 'mapbox://annamai.bo1h1cab' // tileset ID
     },
     'source-layer': 'ne_10m_admin_0_countries-9ztbud',
     type: 'fill',
     paint: {
-      'fill-color': '#52489C', //this is the color you want your tileset to have (I used a nice purple color)
-      'fill-outline-color': '#F2F2F2' //this helps us distinguish individual countries a bit better by giving them an outline
+      'fill-color': '#627ccb', //this is the color you want your tileset to have (I used a nice purple color)
+      'fill-outline-color': '#85a3ff' //this helps us distinguish individual countries a bit better by giving them an outline
     }
   });
 
   map.setFilter(
-    'annamai.bo1h1cab',
-    ['in', 'ADM0_A3_IS'].concat(['USA', 'AUS', 'NGA'])
+    'countries-visited',
+    ['in', 'ADM0_A3_IS'].concat(places.map(({ country }) => country))
   );
 });
 
@@ -58,7 +58,11 @@ const createPlacePin = place => {
         response.body.features.length
       ) {
         const feature = response.body.features[0];
-        new mapboxgl.Marker().setLngLat(feature.center).addTo(map);
+        new mapboxgl.Marker({
+          title: place.city
+        })
+          .setLngLat(feature.center)
+          .addTo(map);
       }
     });
 };

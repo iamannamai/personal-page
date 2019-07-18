@@ -1,50 +1,67 @@
 [
   {
+    "city": "Guangdong, Guangzhou",
+    "country": "CHN",
+    "year": 2011
+  },
+  {
     "city": "Rio de Janiero, Brazil",
+    "country": "BRA",
     "year": 2016
   },
   {
     "city": "Atlanta, Georgia",
+    "country": "USA",
     "year": 2017
   },
   {
     "city": "Portland, Oregon",
+    "country": "USA",
     "year": 2017
   },
   {
     "city": "Seattle, Washington",
+    "country": "USA",
     "year": 2017
   },
   {
-    "city": "Vancouver, British Columbia, Canada",
+    "city": "Vancouver, British Columbia",
+    "country": "CAN",
     "year": 2017
   },
   {
     "city": "Seoul, South Korea",
+    "country": "SK",
     "year": 2018
   },
   {
     "city": "Jeju, South Korea",
+    "country": "SK",
     "year": 2018
   },
   {
     "city": "Paris, France",
+    "country": "FRA",
     "year": 2018
   },
   {
     "city": "Barcelona, Spain",
+    "country": "ESP",
     "year": 2018
   },
   {
     "city": "Zurich, Switzerland",
+    "country": "SUI",
     "year": 2018
   },
   {
     "city": "San Francisco, California",
+    "country": "USA",
     "year": 2018
   },
   {
     "city": "Los Angeles, California",
+    "country": "USA",
     "year": 2018
   }
 ]
