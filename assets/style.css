@@ -232,6 +232,20 @@ header {
   font-size: var(--icon-size); }
   .collapsible.active, .collapsible:hover {
     color: var(--main-font-color); }
+  .collapsible.pulse-w-pause {
+    animation-name: pulse;
+    animation-duration: 3s;
+    animation-iteration-count: infinite; }
+  .collapsible.pulse-w-pause:hover, .collapsible.pulse-w-pause:focus {
+    animation-name: unset; }
+
+@keyframes pulse {
+  from {
+    transform: scale(1); }
+  50% {
+    transform: scale(0.85); }
+  to {
+    transform: scale(1); } }
 
 .collapsible-content {
   display: flex;
@@ -256,7 +270,8 @@ header {
       display: inline;
       color: var(--accent-dark); }
     #about-me .section-container .blurb p span {
-      font-weight: bold; }
+      font-weight: bold;
+      border-bottom: 2px solid var(--accent-dark); }
   @media (min-width: 1000px) {
     #about-me .section-container {
       flex-direction: row;
