@@ -45,4 +45,4 @@ git add -f public/bundle.js public/bundle.js.map
 git commit --allow-empty -m 'Deploying'
 
 # push your local "deploy" branch to the "master" branch on heroku
-git subtree push --prefix public deploy gh-pages
+git subtree push --prefix public origin gh-pages
