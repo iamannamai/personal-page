@@ -4,6 +4,18 @@
     "year": 2016
   },
   {
+    "city": "Atlanta, Georgia",
+    "year": 2017
+  },
+  {
+    "city": "Portland, Oregon",
+    "year": 2017
+  },
+  {
+    "city": "Seattle, Washington",
+    "year": 2017
+  },
+  {
     "city": "Vancouver, British Columbia, Canada",
     "year": 2017
   },
@@ -25,6 +37,14 @@
   },
   {
     "city": "Zurich, Switzerland",
+    "year": 2018
+  },
+  {
+    "city": "San Francisco, California",
+    "year": 2018
+  },
+  {
+    "city": "Los Angeles, California",
     "year": 2018
   }
 ]
