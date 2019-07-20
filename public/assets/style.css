@@ -262,7 +262,6 @@ header {
   #about-me .section-container .blurb p {
     text-indent: 2em;
     font-size: 1.1em;
-    padding: 0.2em;
     line-height: 1.5em;
     text-align: left;
     padding: 0 3em; }
@@ -272,6 +271,9 @@ header {
     #about-me .section-container .blurb p span {
       font-weight: bold;
       border-bottom: 2px solid var(--accent-dark); }
+  @media (max-width: 500px) {
+    #about-me .section-container .blurb p {
+      padding: 0 1.5em; } }
   @media (min-width: 1000px) {
     #about-me .section-container {
       flex-direction: row;

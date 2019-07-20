@@ -26,7 +26,7 @@ map.on('load', function() {
     'source-layer': 'ne_10m_admin_0_countries-9ztbud',
     type: 'fill',
     paint: {
-      'fill-color': '#627ccb', //this is the color you want your tileset to have (I used a nice purple color)
+      'fill-color': '#627ccb', //this is the color you want your tileset to have
       'fill-outline-color': '#85a3ff' //this helps us distinguish individual countries a bit better by giving them an outline
     }
   });
@@ -40,7 +40,6 @@ map.on('load', function() {
 const nav = new mapboxgl.NavigationControl();
 map.addControl(nav, 'top-right');
 map.scrollZoom.disable();
-// console.dir(mapboxClient);
 
 const createPlacePin = place => {
   geocodingClient
