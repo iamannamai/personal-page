@@ -1,5 +1,6 @@
 const travel = require('./travel');
 
+/* Event Listeners for Menus */
 const sidebarMenu = document.querySelector('#sidebar .menu');
 
 sidebarMenu.addEventListener('click', ({ target }) => {
@@ -8,6 +9,22 @@ sidebarMenu.addEventListener('click', ({ target }) => {
     const currentActive = document.querySelector('.menu a.active');
     if (currentActive !== target) {
       target.classList.add('active');
+      currentActive && currentActive.classList.remove('active');
+    }
+  }
+});
+
+const headerNav = document.querySelector('header nav');
+
+headerNav.addEventListener('click', ({ target }) => {
+  const { tagName } = target;
+  if (tagName === 'A' || tagName === 'I') {
+    const currentActive = headerNav.querySelector('a.active');
+
+    const targetA = tagName === 'A' ? target : target.parentElement;
+
+    if (currentActive !== targetA) {
+      targetA.classList.add('active');
       currentActive && currentActive.classList.remove('active');
     }
   }

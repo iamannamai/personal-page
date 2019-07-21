@@ -67,16 +67,40 @@ header {
   position: absolute;
   width: 100%;
   z-index: 3;
-  padding: 0 1rem;
+  padding: 0 0.8em;
   background-color: var(--sidebar-background);
   box-shadow: 2px 0px 3px #999999;
 
   nav {
-    // height: 100px;
+    display: inherit;
+    align-items: center;
+
+    * {
+      display: inherit;
+    }
+
+    ul {
+      list-style: none;
+      font-size: 1em;
+      padding-left: 0;
+      margin: 0;
+      height: 100%;
+
+      li {
+        align-items: center;
+
+        a.active {
+          color: $primary-color;
+          border-bottom: 2px solid $primary-color;
+        }
+      }
+    }
   }
 
   @media (max-width: 768px) {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
   }
 }
 
@@ -145,6 +169,9 @@ header {
   overflow: auto;
   /* Fix ratio of sidebar to main section */
   flex: 4;
+  @media (max-width: 768px) {
+    padding-top: 3em;
+  }
 }
 
 #main h1 {
@@ -167,10 +194,16 @@ header {
   grid-template-columns: repeat(
     auto-fit,
     minmax(350px, 1fr)
-  ); /* Where the magic happens. Cards below 265px wrap to another row. Cards above 265px stretch to take remaining width. Autofit makes it so that cards in new row line up with cards above them*/
+  ); /* Where the magic happens. Cards below 350px wrap to another row. Cards above 350px stretch to take remaining width. Autofit makes it so that cards in new row line up with cards above them*/
   grid-template-rows: auto;
   grid-gap: 10px;
   margin: 10px;
+
+  @media (max-width: 360px) {
+    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+    grid-gap: 10px;
+    margin: 5px;
+  }
 }
 
 .project-card {
@@ -358,7 +391,7 @@ header {
     @media (max-width: 500px) {
       .blurb {
         p {
-          padding: 0 1.5em;
+          padding: 0 1.2em;
         }
       }
     }

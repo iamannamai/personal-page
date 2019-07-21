@@ -56,12 +56,30 @@ header {
   position: absolute;
   width: 100%;
   z-index: 3;
-  padding: 0 1rem;
+  padding: 0 0.8em;
   background-color: var(--sidebar-background);
   box-shadow: 2px 0px 3px #999999; }
+  header nav {
+    display: inherit;
+    align-items: center; }
+    header nav * {
+      display: inherit; }
+    header nav ul {
+      list-style: none;
+      font-size: 1em;
+      padding-left: 0;
+      margin: 0;
+      height: 100%; }
+      header nav ul li {
+        align-items: center; }
+        header nav ul li a.active {
+          color: #99d3df;
+          border-bottom: 2px solid #99d3df; }
   @media (max-width: 768px) {
     header {
-      display: block; } }
+      display: flex;
+      justify-content: space-between;
+      align-content: center; } }
 
 #sidebar {
   font-weight: bold;
@@ -111,6 +129,9 @@ header {
   overflow: auto;
   /* Fix ratio of sidebar to main section */
   flex: 4; }
+  @media (max-width: 768px) {
+    #main {
+      padding-top: 3em; } }
 
 #main h1 {
   font-size: 1.8rem; }
@@ -127,10 +148,15 @@ header {
 #projects .section-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  /* Where the magic happens. Cards below 265px wrap to another row. Cards above 265px stretch to take remaining width. Autofit makes it so that cards in new row line up with cards above them*/
+  /* Where the magic happens. Cards below 350px wrap to another row. Cards above 350px stretch to take remaining width. Autofit makes it so that cards in new row line up with cards above them*/
   grid-template-rows: auto;
   grid-gap: 10px;
   margin: 10px; }
+  @media (max-width: 360px) {
+    #projects .section-container {
+      grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+      grid-gap: 10px;
+      margin: 5px; } }
 
 .project-card {
   position: relative;
@@ -273,7 +299,7 @@ header {
       border-bottom: 2px solid var(--accent-dark); }
   @media (max-width: 500px) {
     #about-me .section-container .blurb p {
-      padding: 0 1.5em; } }
+      padding: 0 1.2em; } }
   @media (min-width: 1000px) {
     #about-me .section-container {
       flex-direction: row;
