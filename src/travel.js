@@ -14,6 +14,49 @@ const map = new mapboxgl.Map({
   center: [15, 25]
 });
 
+const nav = new mapboxgl.NavigationControl();
+map.addControl(nav, 'top-right');
+map.scrollZoom.disable();
+
+const createPlacePin = place => {
+  geocodingClient
+    .forwardGeocode({
+      query: place.city,
+      autocomplete: false,
+      limit: 1
+    })
+    .send()
+    .then(function(response) {
+      if (
+        response &&
+        response.body &&
+        response.body.features &&
+        response.body.features.length
+      ) {
+        const feature = response.body.features[0];
+
+        feature.properties = {
+          ...feature.properties,
+          title: place.city
+        };
+
+        new mapboxgl.Marker({
+          title: place.city,
+          'marker-color': '#9c89cc',
+          'marker-size': 'medium',
+          'marker-symbol': 'building'
+        })
+          .setLngLat(feature.center)
+          .setPopup(
+            new mapboxgl.Popup({ offset: 25 })
+              // .setText(feature.properties.title)
+              .setHTML(`<h3>${feature.properties.title}</h3>`)
+          )
+          .addTo(map);
+      }
+    });
+};
+
 map.on('load', function() {
   //On map load, we want to do some stuff
   map.addLayer({
@@ -35,37 +78,8 @@ map.on('load', function() {
     'countries-visited',
     ['in', 'ADM0_A3_IS'].concat(places.map(({ country }) => country))
   );
+
+  places.forEach(createPlacePin);
 });
-
-const nav = new mapboxgl.NavigationControl();
-map.addControl(nav, 'top-right');
-map.scrollZoom.disable();
-
-const createPlacePin = place => {
-  geocodingClient
-    .forwardGeocode({
-      query: place.city,
-      autocomplete: false,
-      limit: 1
-    })
-    .send()
-    .then(function(response) {
-      if (
-        response &&
-        response.body &&
-        response.body.features &&
-        response.body.features.length
-      ) {
-        const feature = response.body.features[0];
-        new mapboxgl.Marker({
-          title: place.city
-        })
-          .setLngLat(feature.center)
-          .addTo(map);
-      }
-    });
-};
-
-places.forEach(createPlacePin);
 
 module.exports = map;

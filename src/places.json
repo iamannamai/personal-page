@@ -6,17 +6,27 @@
   },
   {
     "city": "Hong Kong, Hong Kong",
-    "country": "HK",
+    "country": "HKG",
     "year": 2011
   },
   {
-    "city": "Orland, Florida",
+    "city": "Orlando, Florida",
     "country": "USA",
     "year": 2015
   },
   {
+    "city": "Chicago, Illinois",
+    "country": "USA",
+    "year": 2016
+  },
+  {
     "city": "Rio de Janiero, Brazil",
     "country": "BRA",
+    "year": 2016
+  },
+  {
+    "city": "Dallas, Texas",
+    "country": "USA",
     "year": 2016
   },
   {
@@ -41,13 +51,18 @@
   },
   {
     "city": "Seoul, South Korea",
-    "country": "SK",
+    "country": "KOR",
     "year": 2018
   },
   {
     "city": "Jeju, South Korea",
-    "country": "SK",
+    "country": "KOR",
     "year": 2018
+  },
+  {
+    "city": "Washington, DC",
+    "country": "USA",
+    "year": 2016
   },
   {
     "city": "Paris, France",
@@ -61,7 +76,7 @@
   },
   {
     "city": "Zurich, Switzerland",
-    "country": "SUI",
+    "country": "CHE",
     "year": 2018
   },
   {
