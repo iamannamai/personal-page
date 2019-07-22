@@ -14,6 +14,7 @@ function cleanup_at_exit {
 
   # remove the deploy branch
   git branch -D deploy
+  git branch -D gh-pages
 }
 trap cleanup_at_exit EXIT
 
